@@ -1,6 +1,6 @@
 class TutorSession < ApplicationRecord
   def self.sessions_for_student(student)
-    session_ids = TutorSessionUser.where(kind: "Student", user_id: student.id).pluck(:tutor_session_id)
+    session_ids = TutorSessionUser.where(kind: "Student", user_id: student.id).select(:tutor_session_id)
 
     session_users_by_session = TutorSessionUser.where(tutor_session_id: session_ids)
       .order(:user_id)
