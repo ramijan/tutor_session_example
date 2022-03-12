@@ -3,7 +3,7 @@ class TutorSession < ApplicationRecord
     session_ids = TutorSessionUser.where(kind: "Student", user_id: student.id).select(:tutor_session_id)
 
     session_users_by_session = TutorSessionUser.where(tutor_session_id: session_ids)
-      .order(:user_id)
+      .order(:id)
       .group_by(&:tutor_session_id)
 
     # true student session are those where student is the second user of session
