@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-Things you may want to cover:
+Check seeds.rb for the scenario.   One tutor, two students, three tutoring sessions.   First session is student 1, second session is student 2 and third session has both students (student 1 is the true student)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`TutorSession.sessions_for_student(student)` returns two sessions for student 1 and one session for student 2
